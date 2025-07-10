@@ -108,3 +108,30 @@ body {
 .image-card.full-screen .caption {
     display: none;
 }
+
+
+.floating-box {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 450px;
+    transition: all 0.3s ease;
+  }
+
+  .floating-box.fixed {
+    position: fixed;
+    top: 20px;
+  }
+
+
+  ul {
+    background: white;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
