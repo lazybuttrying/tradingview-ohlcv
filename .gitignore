@@ -10,3 +10,5 @@ node_modules/
 *.csv
 # Coverage
 coverage/
+*.parquet
+*.png

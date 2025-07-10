@@ -11,5 +11,8 @@
   "devDependencies": {
     "@playwright/test": "^1.53.1",
     "@types/node": "^24.0.4"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
