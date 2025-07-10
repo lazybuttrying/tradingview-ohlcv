@@ -11,6 +11,13 @@ body {
     padding: 20px;
 }
 
+h2 {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
 .dashboard {
     max-width: 2700px;
     margin: 0 auto;
