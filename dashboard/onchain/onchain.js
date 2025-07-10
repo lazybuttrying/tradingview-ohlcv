@@ -27,30 +27,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayImages(images) {
         chartsContainer.innerHTML = '';
-        
-        images.forEach((image, index) => {
+    
+        // Group images: { tether: { gl: [], kr: [] }, usdc: { gl: [], kr: [] } }
+        const grouped = {
+            tether: { gl: [], kr: [] },
+            usdc: { gl: [], kr: [] }
+        };
+    
+        images.forEach(image => {
+            const nameLower = image.name.toLowerCase();
+            const folderLower = image.folder.toLowerCase();
+    
+            const stable = nameLower.includes('tether') ? 'tether'
+                          : nameLower.includes('usdc') ? 'usdc'
+                          : null;
+    
+            const region = folderLower.includes('/gl') ? 'gl'
+                        : folderLower.includes('/kr') ? 'kr'
+                        : null;
+    
+            if (stable && region && grouped[stable]) {
+                grouped[stable][region].push(image);
+            }
+        });
+    
+        // Section creation
+        function createSection(title, imageGroup) {
+            const section = document.createElement('div');
+            section.className = 'image-section';
+    
+            const sectionTitle = document.createElement('h2');
+            sectionTitle.textContent = title;
+            section.appendChild(sectionTitle);
+    
+            const row = document.createElement('div');
+            row.className = 'chart-row';
+    
+            const leftCol = document.createElement('div');
+            leftCol.className = 'chart-column';
+            const rightCol = document.createElement('div');
+            rightCol.className = 'chart-column';
+
+            // After creating leftCol
+            const leftTitle = document.createElement('h3');
+            leftTitle.textContent = 'Global';
+            leftCol.appendChild(leftTitle);
+
+            // After creating rightCol
+            const rightTitle = document.createElement('h3');
+            rightTitle.textContent = 'Korea';
+            rightCol.appendChild(rightTitle);
+    
+            imageGroup.gl.forEach(img => leftCol.appendChild(createChartDiv(img)));
+            imageGroup.kr.forEach(img => rightCol.appendChild(createChartDiv(img)));
+    
+            row.appendChild(leftCol);
+            row.appendChild(rightCol);
+            section.appendChild(row);
+    
+            chartsContainer.appendChild(section);
+        }
+    
+        // Image div creation
+        function createChartDiv(image) {
             const chartDiv = document.createElement('div');
             chartDiv.className = 'chart';
-            
+    
             const img = document.createElement('img');
             img.src = image.path;
             img.alt = image.name;
             img.className = 'chart-image';
             img.onclick = () => openModal(image);
-            
+    
             const caption = document.createElement('div');
             caption.className = 'chart-caption';
             caption.innerHTML = `
-                <span class="image-name">${image.name}</span>
-                <br>
+                <span class="image-name">${image.name}</span><br>
                 <span class="image-folder">${image.folder}</span>
             `;
-            
+    
             chartDiv.appendChild(img);
             chartDiv.appendChild(caption);
-            chartsContainer.appendChild(chartDiv);
-        });
+            return chartDiv;
+        }
+    
+        // Display Tether section first, then USDC
+        createSection('Tether', grouped.tether);
+        createSection('USDC', grouped.usdc);
     }
+    
 
     // Modal functionality
     function openModal(image) {
