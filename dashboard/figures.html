@@ -11,8 +11,9 @@
         <div class="header">
             <h1>Price Error btw Upbit & Global CEX</h1>
             <p>Data Source: TradingView</p>
-            <p>price error = (upbit - oth) / upbit</p>
-            <p><a href="/onchain">Go to On-chain Data</a></p>
+            <p>price error = (upbit - other) / upbit</p>
+            <button><a href="/onchain">Go to On-chain Data</a></button>
+            <p>거래소마다 그래프 개형이 비슷함</p>
         </div>
         <div id="figureGrid"></div>
     </div>
@@ -26,7 +27,317 @@
           <li>🤑 2024.05: Ethereum ETF Approval</li>
           <li>🤑 2024.11: Trump Elected</li>
         </ul>
+        <ul>
+            <li>? 2023.01: -</li>
+            <li>? 2023.08: +</li>
+            <li>? 2024.05: -</li>
+            <li>? 2024.08: - on SOLUSDT</li>
+            <li>🟨 2024.12: Korea Martial Law</li>
+            <li>? 2025.02: + on XRPUSDT</li>
+            <li>? 2025.03: +</li>
+            <li>2025.05.06~: 대통령 선거인명부 작성</li>
+        </ul>
       </div>
+
+      <div>
+        <h2>Spot</h2>
+        <style scoped>
+            .dataframe tbody tr th:only-of-type {
+                vertical-align: middle;
+            }
+        
+            .dataframe tbody tr th {
+                vertical-align: top;
+            }
+        
+            .dataframe thead th {
+                text-align: right;
+            }
+        </style>
+        <table border="1" class="dataframe">
+          <thead>
+            <tr style="text-align: right;">
+              <th></th>
+              <th></th>
+              <th>time</th>
+            </tr>
+            <tr>
+              <th>Exchange</th>
+              <th>Pair</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th rowspan="15" valign="top">binance</th>
+              <th>BTCUSDT</th>
+              <td>2017-08-17</td>
+            </tr>
+            <tr>
+              <th>ETHUSDT</th>
+              <td>2017-08-17</td>
+            </tr>
+            <tr>
+              <th>BNBUSDT</th>
+              <td>2017-11-06</td>
+            </tr>
+            <tr>
+              <th>LTCUSDT</th>
+              <td>2017-12-13</td>
+            </tr>
+            <tr>
+              <th>ADAUSDT</th>
+              <td>2018-04-17</td>
+            </tr>
+            <tr>
+              <th>XRPUSDT</th>
+              <td>2018-05-04</td>
+            </tr>
+            <tr>
+              <th>XLMUSDT</th>
+              <td>2018-05-31</td>
+            </tr>
+            <tr>
+              <th>LINKUSDT</th>
+              <td>2019-01-16</td>
+            </tr>
+            <tr>
+              <th>DOGEUSDT</th>
+              <td>2019-07-05</td>
+            </tr>
+            <tr>
+              <th>BCHUSDT</th>
+              <td>2019-11-28</td>
+            </tr>
+            <tr>
+              <th>SOLUSDT</th>
+              <td>2020-08-11</td>
+            </tr>
+            <tr>
+              <th>DOTUSDT</th>
+              <td>2020-08-18</td>
+            </tr>
+            <tr>
+              <th>UNIUSDT</th>
+              <td>2020-09-17</td>
+            </tr>
+            <tr>
+              <th>AVAXUSDT</th>
+              <td>2020-09-22</td>
+            </tr>
+            <tr>
+              <th>AAVEUSDT</th>
+              <td>2020-10-15</td>
+            </tr>
+            <tr>
+              <th rowspan="2" valign="top">coinbase</th>
+              <th>ETHUSDT</th>
+              <td>2021-05-04</td>
+            </tr>
+            <tr>
+              <th>BTCUSDT</th>
+              <td>2021-05-04</td>
+            </tr>
+            <tr>
+              <th>binance</th>
+              <th>SHIBUSDT</th>
+              <td>2021-05-10</td>
+            </tr>
+            <tr>
+              <th rowspan="9" valign="top">coinbase</th>
+              <th>DOGEUSDT</th>
+              <td>2021-06-03</td>
+            </tr>
+            <tr>
+              <th>DOTUSDT</th>
+              <td>2021-06-16</td>
+            </tr>
+            <tr>
+              <th>SOLUSDT</th>
+              <td>2021-06-17</td>
+            </tr>
+            <tr>
+              <th>SHIBUSDT</th>
+              <td>2021-09-09</td>
+            </tr>
+            <tr>
+              <th>AVAXUSDT</th>
+              <td>2021-09-30</td>
+            </tr>
+            <tr>
+              <th>LINKUSDT</th>
+              <td>2022-02-09</td>
+            </tr>
+            <tr>
+              <th>MATICUSDT</th>
+              <td>2022-02-09</td>
+            </tr>
+            <tr>
+              <th>ADAUSDT</th>
+              <td>2022-02-09</td>
+            </tr>
+            <tr>
+              <th>XLMUSDT</th>
+              <td>2022-03-02</td>
+            </tr>
+            <tr>
+              <th>binance</th>
+              <th>OPUSDT</th>
+              <td>2022-06-01</td>
+            </tr>
+            <tr>
+              <th>coinbase</th>
+              <th>OPUSDT</th>
+              <td>2022-08-09</td>
+            </tr>
+            <tr>
+              <th rowspan="3" valign="top">binance</th>
+              <th>WBTCUSDT</th>
+              <td>2023-04-28</td>
+            </tr>
+            <tr>
+              <th>SUIUSDT</th>
+              <td>2023-05-03</td>
+            </tr>
+            <tr>
+              <th>PEPEUSDT</th>
+              <td>2023-05-05</td>
+            </tr>
+            <tr>
+              <th>coinbase</th>
+              <th>XRPUSDT</th>
+              <td>2023-07-13</td>
+            </tr>
+            <tr>
+              <th rowspan="2" valign="top">binance</th>
+              <th>TRUMPUSDT</th>
+              <td>2025-01-19</td>
+            </tr>
+            <tr>
+              <th>ONDOUSDT</th>
+              <td>2025-04-11</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div>
+            <h2>Perpetual</h2>
+            <style scoped>
+                .dataframe tbody tr th:only-of-type {
+                    vertical-align: middle;
+                }
+            
+                .dataframe tbody tr th {
+                    vertical-align: top;
+                }
+            
+                .dataframe thead th {
+                    text-align: right;
+                }
+            </style>
+            <table border="1" class="dataframe">
+              <thead>
+                <tr style="text-align: right;">
+                  <th></th>
+                  <th></th>
+                  <th>time</th>
+                </tr>
+                <tr>
+                  <th>Exchange</th>
+                  <th>Pair</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th rowspan="21" valign="top">binance</th>
+                  <th>BCHUSDT.P</th>
+                  <td>2019-12-19 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>DOTUSDT.P</th>
+                  <td>2020-08-22 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>ETHUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>UNIUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>SOLUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>OPUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>LTCUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>LINKUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>XLMUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>XRPUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>BTCUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>BNBUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>AVAXUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>ADAUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>AAVEUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>DOGEUSDT.P</th>
+                  <td>2023-01-01 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>SUIUSDT.P</th>
+                  <td>2023-05-03 16:00:00</td>
+                </tr>
+                <tr>
+                  <th>1000PEPEUSDT.P</th>
+                  <td>2023-05-05 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>1000BONKUSDT.P</th>
+                  <td>2023-11-22 00:00:00</td>
+                </tr>
+                <tr>
+                  <th>ONDOUSDT.P</th>
+                  <td>2024-01-20 13:00:00</td>
+                </tr>
+                <tr>
+                  <th>TRUMPUSDT.P</th>
+                  <td>2025-01-18 13:00:00</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
     <script src="figures.js"></script>
 </body>
 </html>

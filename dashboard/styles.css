@@ -123,6 +123,7 @@ h2 {
     right: 50px;
     width: 450px;
     transition: all 0.3s ease;
+    z-index: 999;
   }
 
   .floating-box.fixed {

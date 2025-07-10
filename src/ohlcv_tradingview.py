@@ -204,7 +204,7 @@ def get_ohlcv_in_chart(symbol='CRYPTOCOM:BTCUSD', freq=None, free_option=None, h
             print("🖱 Load Full OHLCV Candles")
             page.keyboard.down('Control')
             page.keyboard.down("ArrowLeft")
-            time.sleep(15)
+            time.sleep(12)
             page.keyboard.up("ArrowLeft")
             page.keyboard.up('Control')
             delay_randomized()
@@ -230,7 +230,7 @@ def get_ohlcv_in_chart(symbol='CRYPTOCOM:BTCUSD', freq=None, free_option=None, h
             
         browser.close()
 
-markets = [ 'DELTAIN', 'DELTA',
+markets = [ 'DELTAIN', 'DELTA', 
     'CAPITALCOM', 'BITMART', 'XTCOM', 'TOKOCRYPTO', 'HTX', 'KCEX',  'PYTH', 'BLOFIN',
         'DEEPCOIN', 'ASCENDEX', 'BITFOREX', 'BICONOMYCOM', 'COINW', 'PROBIT', 'BVOX',
         'BIFINANCE', 'HIBT', 'ORANGEX', 'BTCC', 'BITVAVO', 'TAPBIT', 'COINCHECK',
@@ -248,7 +248,7 @@ markets = [ 'DELTAIN', 'DELTA',
 
 
 
-perpecture = False
+perpecture = True
 
 
 invalid_symbols = pd.read_csv(
@@ -259,7 +259,7 @@ class FreeOHLCV:
     numbar: int = 5000
     profile_number: int = 11  # Chrome profile number
     
-for pairA in ([ 'UST', 'USC',
+for pairA in ([ 'UST', 'USC', 'TRX',
     'BTC', 'ETH', 'XRP', 'WBTC', 'WETH', 'XRP',
     'BNB', 'PEPE', 'SHIB', 'TRUMP', 'TRUMPOFFICIAL',
     'SOL', 'TRON', 'SUI', 'ADA', 
@@ -269,7 +269,7 @@ for pairA in ([ 'UST', 'USC',
     'DOGE', 'AVAX', 'UNI',    
 ]):
     
-    for pairB in ['USDT', 'USDC', 'DAI', 'USD'] + ([] if perpecture else ['KRW']):
+    for pairB in ['USDT', 'USDC', 'DAI', 'USD', 'EUR'] + ([] if perpecture else ['KRW']):
         for m in (markets if pairB != 'KRW' else ['UPBIT', 'BITHUMB', 'COINONE', 'GOPAX']):    
             symbol = f'{m}:{pairA}{"G" if m=="GEMINI" else ""}{pairB}' + ('.P' if perpecture else '')
             if symbol in invalid_symbols:
