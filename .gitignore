@@ -15,4 +15,3 @@ coverage/
 .vercel.json
 *.csv
 *.parquet
-*.png
