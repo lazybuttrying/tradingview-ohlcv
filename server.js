@@ -52,6 +52,23 @@ app.get('/api/files/:pair/:exchange', (req, res) => {
     }
 });
 
+// Serve onchain images
+// Serve onchain images
+// Serve onchain directory as static files
+app.use('/onchain', express.static(path.join(DASHBOARD_DIR, 'onchain')));
+
+// List onchain files
+app.get('/onchain/:chain/:region', (req, res) => {
+    try {
+        const { chain, region } = req.params;
+        const dirPath = path.join(DASHBOARD_DIR, 'onchain', chain, region);
+        const files = fs.readdirSync(dirPath).filter(file => file.endsWith('.png'));
+        res.json(files);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server running at http://localhost:${port}`);
 });
