@@ -7,6 +7,12 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 
-*.csv
+
 # Coverage
 coverage/
+
+.vercel
+.vercel.json
+*.csv
+*.parquet
+*.png
