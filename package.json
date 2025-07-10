@@ -1,11 +1,14 @@
 {
-  "name": "tradingview",
+  "name": "tradingview-ohlcv-price-error",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "description": "TradingView Price Error Analysis Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
   "keywords": [],
-  "author": "",
+  "author": "DYK",
   "license": "ISC",
   "packageManager": "pnpm@10.12.4",
   "devDependencies": {
